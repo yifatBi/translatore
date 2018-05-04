@@ -9,10 +9,13 @@ import {HttpClient} from '@angular/common/http';
 export class AppComponent {
   constructor(
     private http: HttpClient) {}
-  title = 'app';
+  title = 'Auto Programming Translator';
   translateResult;
+  loader = false;
   submitFunction(text) {
+    this.loader = true;
     this.http.get('https://conduit.productionready.io/api/profiles/eric').subscribe( data => {
+      this.loader = false;
       alert(JSON.stringify(data));
       this.translateResult = JSON.stringify(data);
     });

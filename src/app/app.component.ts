@@ -17,7 +17,7 @@ export class AppComponent {
     this.loader = true;
     this.http.get('https://conduit.productionready.io/api/profiles/eric').subscribe( data => {
       this.loader = false;
-      alert(JSON.stringify(data));
+      // alert(JSON.stringify(data));
       this.translateResult = JSON.stringify(data);
     });
 

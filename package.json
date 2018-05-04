@@ -4,12 +4,13 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port=8080",
     "build": "ng build --prod --base-href='https://yifatBi.github.io/translatore/'",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy":"angular-cli-ghpages"
+    "deploy":"angular-cli-ghpages",
+    "deploy1":"npm run build && npm run deploy"
   },
   "private": true,
   "dependencies": {

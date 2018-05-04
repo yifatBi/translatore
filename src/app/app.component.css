@@ -2,12 +2,14 @@ textarea{
   resize: none; border-radius: 0.4em; padding: 0.5em;
 }
 img.loader {
-  -webkit-animation: mover 2s infinite  alternate;
-  animation: mover 2s infinite  alternate;
+  /*-webkit-animation: mover 2s infinite  alternate;*/
+  /*animation: mover 2s infinite  alternate;*/
+  -webkit-animation: rotation 6s infinite linear;
+  animation: rotation 6s infinite linear;
   position: absolute;
-  left: 18%;
-  top: 25%;
-  border-radius: 0.5em;
+  /*left: 18%;*/
+  top: 10%;
+  border-radius: 50%;
 }
 @-webkit-keyframes mover {
   0% { transform: translateY(0); }
@@ -16,4 +18,16 @@ img.loader {
 @keyframes mover {
   0% { transform: translateY(0); }
   100% { transform: translateY(-20px); }
+}
+#loading {
+  -webkit-animation: rotation 2s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
 }

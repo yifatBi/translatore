@@ -1,6 +1,9 @@
 textarea{
   resize: none; border:none; padding: 0.5em;
 }
+.container.loading{
+  opacity: 0.2;
+}
 img.loader {
   /*-webkit-animation: mover 2s infinite  alternate;*/
   /*animation: mover 2s infinite  alternate;*/
@@ -8,7 +11,10 @@ img.loader {
   animation: rotation 6s infinite linear;
   position: absolute;
   /*left: 18%;*/
-  top: 10%;
+  top: 35%;
+  left: 35%;
+  width: 30vw;
+  height: 30vw;
   border-radius: 50%;
 }
 @-webkit-keyframes mover {
@@ -70,4 +76,8 @@ hr {
 }
 .navbar-expand{
   padding: 2rem;
+}
+
+.btn-group .btn-info{
+  font-size: 0.9em;
 }

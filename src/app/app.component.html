@@ -21,7 +21,7 @@
     <!--</ul>-->
   <!--</div>-->
 </nav>
-<div class="container">
+<div class="container" [ngClass]="{'loading':loader}" >
   <div class="row" style="margin-top: 5%">
 </div>
 <div class="row">
@@ -34,9 +34,9 @@
         <button type="button" class="btn btn-info" disabled>France</button>
       </div>
     </div>
-    <textarea [(ngModel)]="text" class="translate-boxes" rows="7"   #textbox placeholder="Please enter description for program you want."></textarea>
+    <textarea [(ngModel)]="text" class="translate-boxes" rows="7"  [disabled]="loader"  #textbox placeholder="Please enter description for program you want."></textarea>
     <br/>
-    <button class="btn btn-primary" type="submit" (click)="submitFunction(text)" style="float:right; width: 30%" [disabled]="!text">Convert</button>
+    <button class="btn btn-primary" type="submit" (click)="submitFunction(text)" style="float:right; width: 30%" [disabled]="!text||loader">Convert</button>
   </div>
   <div class="col-md-6 col-lg-6 col-centered">
     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
@@ -57,5 +57,7 @@
   <!--<button mat-button (click)="submitFunction(textbox.value)" [disabled]="text" >translate</button>-->
   <!--<div >{{translateResult}}</div>-->
 <!--</div>-->
-<!--<img style="position: fixed;vertical-align: center" src="assets/images/nT_Loader.jpeg" height="100%" class="loader" width="100%" [hidden]="!loader"/>-->
+<!--<img style="position: fixed;vertical-align: center" src="assets/images/neural.gif" height="100%"  width="100%" [hidden]="loader"/>-->
+
+<img style="position: fixed;vertical-align: center" src="assets/images/nT_Loader.jpeg" height="100vh" class="loader" width="100vw" [hidden]="!loader"/>
 

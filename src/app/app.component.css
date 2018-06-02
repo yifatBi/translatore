@@ -1,5 +1,5 @@
 textarea{
-  resize: none; border-radius: 0.4em; padding: 0.5em;
+  resize: none; border:none; padding: 0.5em;
 }
 img.loader {
   /*-webkit-animation: mover 2s infinite  alternate;*/
@@ -30,4 +30,44 @@ img.loader {
   to {
     -webkit-transform: rotate(359deg);
   }
+}
+
+
+
+body {
+  padding-bottom: 2rem;
+}
+
+h3 {
+  margin-top: 2rem;
+}
+
+.row {
+  margin-bottom: 1rem;
+}
+.row .row {
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+[class*="col-"] {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: rgb(236, 236, 236);
+  border: 1px solid rgb(236, 236, 236);
+}
+
+hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.translate-boxes {
+  width: 100%;
+  margin: 1em 0;
+}
+.translate-boxes:disabled {
+  background: #7777774d;
+}
+.navbar-expand{
+  padding: 2rem;
 }

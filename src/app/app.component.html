@@ -1,15 +1,61 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1 style="color: #00008bbf">
-    Welcome to {{ title }}!
+<!--<div style="text-align:center">-->
+  <!--<h1 style="color: #00008bbf">-->
+    <!--Code My Word-->
+  <!--</h1>-->
+  <!--<img src="assets/images/translate.jpeg" height="164" width="307" style="border-radius: 0.5em;box-shadow: 8px 8px;"/>-->
+<!--</div>-->
+<nav class="navbar-expand navbar-dark bg-primary text-center">
+  <h1 style="color: #0a0a67d1">
+    Code My Word
   </h1>
-  <img src="assets/images/translate.jpeg" height="164" width="307" style="border-radius: 0.5em;box-shadow: 8px 8px;"/>
+  <!--<a class="navbar-brand" href="#">Prauto</a>-->
+  <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">-->
+    <!--<span class="navbar-toggler-icon"></span>-->
+  <!--</button>-->
+  <!--<div class="collapse navbar-collapse" id="navbarsExample02">-->
+    <!--<ul class="navbar-nav mr-auto">-->
+      <!--<li class="nav-item active">-->
+        <!--<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>-->
+      <!--</li>-->
+    <!--</ul>-->
+  <!--</div>-->
+</nav>
+<div class="container">
+  <div class="row" style="margin-top: 5%">
 </div>
-
-<div style="margin-top: 15px" align="center">
-<textarea  #textbox placeholder="enter your wish...:)" rows="4" cols="50" ></textarea>
-  <button mat-button (click)="submitFunction(textbox.value)">translate</button>
-  <textarea rows="4" cols="50" >{{translateResult}}</textarea>
+<div class="row">
+  <div class="col-6 col-centered">
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+      <div class="btn-group mr-2" role="group" aria-label="Lang-Group">
+        <button type="button" class="btn btn-info">English</button>
+        <button type="button" class="btn btn-info" disabled>Hebrew</button>
+        <button type="button" class="btn btn-info" disabled>Spanish</button>
+        <button type="button" class="btn btn-info" disabled>France</button>
+      </div>
+    </div>
+    <textarea [(ngModel)]="text" class="translate-boxes" rows="7"   #textbox placeholder="Please enter description for program you want."></textarea>
+    <br/>
+    <button class="btn btn-primary" type="submit" (click)="submitFunction(textbox.value)" style="float:right; width: 30%" [disabled]="!text">Convert</button>
+  </div>
+  <div class="col-6 col-centered">
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+      <div class="btn-group mr-2" role="group" aria-label="Code-Group">
+        <button type="button" class="btn btn-info">Java</button>
+        <button type="button" class="btn btn-info" disabled>Python</button>
+        <button type="button" class="btn btn-info" disabled>Go</button>
+        <button type="button" class="btn btn-info" disabled>C#</button>
+      </div>
+    </div>
+    <textarea class="translate-boxes" rows="7"  disabled [(ngModel)]="translateResult">
+                    </textarea>
+  </div>
 </div>
-<img style="position: fixed;vertical-align: center" src="assets/images/nT_Loader.jpeg" height="100%" class="loader" width="100%" [hidden]="!loader"/>
+</div>
+<!--<div style="margin-top: 15px" align="center">-->
+<!--<textarea  #textbox placeholder="enter your wish...:)" rows="4" cols="50" ></textarea>-->
+  <!--<button mat-button (click)="submitFunction(textbox.value)" [disabled]="text" >translate</button>-->
+  <!--<div >{{translateResult}}</div>-->
+<!--</div>-->
+<!--<img style="position: fixed;vertical-align: center" src="assets/images/nT_Loader.jpeg" height="100%" class="loader" width="100%" [hidden]="!loader"/>-->
 

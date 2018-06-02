@@ -70,7 +70,10 @@ hr {
   margin: 1em 0;
 }
 .translate-boxes:disabled {
-  background: #77777761;
+  background: #777777b3;
+  color: black;
+  border: #257eea 0.1rem solid;
+  border-radius: 0.2em;
 }
 .navbar-expand{
   padding: 1em;

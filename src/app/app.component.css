@@ -44,9 +44,7 @@ body {
   padding-bottom: 2rem;
 }
 
-h3 {
-  margin-top: 2rem;
-}
+
 
 .row {
   margin-bottom: 1rem;
@@ -72,10 +70,10 @@ hr {
   margin: 1em 0;
 }
 .translate-boxes:disabled {
-  background: #7777774d;
+  background: #77777761;
 }
 .navbar-expand{
-  padding: 2rem;
+  padding: 1em;
 }
 
 .btn-group .btn-info{

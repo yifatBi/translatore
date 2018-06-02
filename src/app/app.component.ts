@@ -1,6 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {logging} from 'selenium-webdriver';
 
 
 @Component({
@@ -20,8 +19,9 @@ export class AppComponent {
     console.log(text);
     this.http.get('https://conduit.productionready.io/api/profiles/eric').subscribe( data => {
       this.loader = false;
-      // alert(JSON.stringify(data));
       this.translateResult = JSON.stringify(data);
+      // scrolling to the result if small device
+      document.getElementById('translation').scrollIntoView({ behavior: 'smooth' })
     });
 
 

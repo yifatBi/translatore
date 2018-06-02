@@ -25,7 +25,7 @@
   <div class="row" style="margin-top: 5%">
 </div>
 <div class="row">
-  <div class="col-6 col-centered">
+  <div class="col-md-6 col-lg-6 col-centered">
     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
       <div class="btn-group mr-2" role="group" aria-label="Lang-Group">
         <button type="button" class="btn btn-info">English</button>
@@ -36,9 +36,9 @@
     </div>
     <textarea [(ngModel)]="text" class="translate-boxes" rows="7"   #textbox placeholder="Please enter description for program you want."></textarea>
     <br/>
-    <button class="btn btn-primary" type="submit" (click)="submitFunction(textbox.value)" style="float:right; width: 30%" [disabled]="!text">Convert</button>
+    <button class="btn btn-primary" type="submit" (click)="submitFunction(text)" style="float:right; width: 30%" [disabled]="!text">Convert</button>
   </div>
-  <div class="col-6 col-centered">
+  <div class="col-md-6 col-lg-6 col-centered">
     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
       <div class="btn-group mr-2" role="group" aria-label="Code-Group">
         <button type="button" class="btn btn-info">Java</button>

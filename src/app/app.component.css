@@ -4,7 +4,7 @@ textarea{
 .container.loading{
   opacity: 0.2;
 }
-#textbox{
+#textbox {
   border: #b3becc9c 0.1rem solid;
 }
 img.loader {

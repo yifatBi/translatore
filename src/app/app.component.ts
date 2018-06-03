@@ -24,7 +24,7 @@ export class AppComponent {
     console.log(text);
     this.http.get('https://conduit.productionready.io/api/profiles/eric').subscribe( data => {
       this.loader = false;
-      this.translateResult = JSON.stringify(data);
+      this.translateResult = 'function(int Var1,int Var2){return Var1+Var2}';
       // scrolling to the result if small device
       document.getElementById('translation').scrollIntoView({ behavior: 'smooth' });
     });

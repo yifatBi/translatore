@@ -29,11 +29,10 @@
     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
       <div class="btn-group mr-2" role="group" aria-label="Lang-Group">
         <button type="button" class="btn btn-info">English</button>
-        <!--<button type="button" class="btn btn-info" placement="bottom" ngbTooltip="those languages don't supported yet">-->
-          <button type="button" class="btn btn-info" disabled>Hebrew</button>
+        <button type="button" class="btn btn-info" placement="bottom" ngbTooltip="those languages don't supported yet"><button type="button" class="btn btn-info" disabled>Hebrew</button>
         <button type="button" class="btn btn-info" disabled>Spanish</button>
         <button type="button" class="btn btn-info" disabled>France</button>
-          <!--</button>-->
+          </button>
       </div>
     </div>
     <textarea autofocus  [(ngModel)]="text" id="textbox" class="translate-boxes" rows="7"  [disabled]="loader"  #textbox placeholder="Please enter description for program you want."></textarea>
@@ -44,11 +43,9 @@
     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
       <div class="btn-group mr-2" role="group" aria-label="Code-Group">
         <button type="button" class="btn btn-info">Java</button>
-        <!--<button type="button" class="btn btn-info" placement="bottom" ngbTooltip="those languages don't supported yet">-->
-          <button type="button" class="btn btn-info" disabled>Python</button>
+        <button type="button" class="btn btn-info" placement="bottom" ngbTooltip="those languages don't supported yet"><button type="button" class="btn btn-info" disabled>Python</button>
         <button type="button" class="btn btn-info" disabled>Go</button>
-          <button type="button" class="btn btn-info" disabled>C#</button>
-        <!--</button>-->
+          <button type="button" class="btn btn-info" disabled>C#</button></button>
       </div>
     </div>
     <textarea class="translate-boxes" rows="7"  disabled [(ngModel)]="translateResult" id="translation" #codeConvertion>

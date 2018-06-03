@@ -4,6 +4,9 @@ textarea{
 .container.loading{
   opacity: 0.2;
 }
+#textbox{
+  border: #b3becc9c 0.1rem solid;
+}
 img.loader {
   /*-webkit-animation: mover 2s infinite  alternate;*/
   /*animation: mover 2s infinite  alternate;*/
@@ -69,11 +72,10 @@ hr {
   width: 100%;
   margin: 1em 0;
 }
-.translate-boxes:disabled {
-  background: #777777b3;
-  color: black;
-  border: #257eea 0.1rem solid;
-  border-radius: 0.2em;
+#translation{
+  background: black;
+  color: white;
+  box-shadow: blue 0 0 0.5em 0;
 }
 .navbar-expand{
   padding: 1em;
@@ -82,3 +84,4 @@ hr {
 .btn-group .btn-info{
   font-size: 0.9em;
 }
+

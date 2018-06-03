@@ -12,8 +12,13 @@ export class AppComponent {
     private http: HttpClient) {}
   translateResult;
   text = '';
-  code = '';
   loader = false;
+  copyInputMessage(inputElement) {
+    inputElement.disabled = false;
+    inputElement.select();
+    document.execCommand('copy');
+    inputElement.disabled = true;
+  }
   submitFunction(text) {
     this.loader = true;
     console.log(text);
@@ -21,9 +26,10 @@ export class AppComponent {
       this.loader = false;
       this.translateResult = JSON.stringify(data);
       // scrolling to the result if small device
-      document.getElementById('translation').scrollIntoView({ behavior: 'smooth' })
+      document.getElementById('translation').scrollIntoView({ behavior: 'smooth' });
     });
 
 
   }
+
 }

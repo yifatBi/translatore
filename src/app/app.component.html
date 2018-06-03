@@ -6,7 +6,7 @@
   <!--<img src="assets/images/translate.jpeg" height="164" width="307" style="border-radius: 0.5em;box-shadow: 8px 8px;"/>-->
 <!--</div>-->
 <nav class="navbar-expand navbar-dark bg-primary text-center">
-  <h2 style="color: #0a0a67d1">
+  <h2 style="color: white">
     Code My Word
   </h2>
   <!--<a class="navbar-brand" href="#">Prauto</a>-->
@@ -29,12 +29,13 @@
     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
       <div class="btn-group mr-2" role="group" aria-label="Lang-Group">
         <button type="button" class="btn btn-info">English</button>
-        <button type="button" class="btn btn-info" disabled>Hebrew</button>
+        <button type="button" class="btn btn-info" placement="bottom" ngbTooltip="those languages don't supported yet"><button type="button" class="btn btn-info" disabled>Hebrew</button>
         <button type="button" class="btn btn-info" disabled>Spanish</button>
         <button type="button" class="btn btn-info" disabled>France</button>
+          </button>
       </div>
     </div>
-    <textarea [(ngModel)]="text" class="translate-boxes" rows="7"  [disabled]="loader"  #textbox placeholder="Please enter description for program you want."></textarea>
+    <textarea autofocus  [(ngModel)]="text" id="textbox" class="translate-boxes" rows="7"  [disabled]="loader"  #textbox placeholder="Please enter description for program you want."></textarea>
     <br/>
     <button class="btn btn-primary" type="submit" (click)="submitFunction(text)" style="float:right; width: 30%" [disabled]="!text||loader">Convert</button>
   </div>
@@ -42,13 +43,14 @@
     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
       <div class="btn-group mr-2" role="group" aria-label="Code-Group">
         <button type="button" class="btn btn-info">Java</button>
-        <button type="button" class="btn btn-info" disabled>Python</button>
+        <button type="button" class="btn btn-info" placement="bottom" ngbTooltip="those languages don't supported yet"><button type="button" class="btn btn-info" disabled>Python</button>
         <button type="button" class="btn btn-info" disabled>Go</button>
-        <button type="button" class="btn btn-info" disabled>C#</button>
+          <button type="button" class="btn btn-info" disabled>C#</button></button>
       </div>
     </div>
-    <textarea class="translate-boxes" rows="7"  disabled [(ngModel)]="translateResult" id="translation">
+    <textarea class="translate-boxes" rows="7"  disabled [(ngModel)]="translateResult" id="translation" #codeConvertion>
                     </textarea>
+                       <button class="btn btn-primary" type="submit" (click)="copyInputMessage(codeConvertion)" style="float:right; width: 30%" [disabled]="!translateResult||loader">Copy code</button>
   </div>
 </div>
 </div>

@@ -12,6 +12,9 @@ export class AppComponent {
     private http: HttpClient) {}
   translateResult;
   text = '';
+  codeFutureList = ['Python', 'Go', 'C#'];
+  speakFutureList = ['Hebrew', 'Spanish', 'French'];
+  tooltipMsg = 'Those languages don\'t supported yet';
   loader = false;
   copyInputMessage(inputElement) {
     inputElement.disabled = false;

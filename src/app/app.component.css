@@ -75,7 +75,7 @@ hr {
 #translation{
   background: black;
   color: white;
-  box-shadow: blue 0 0 0.5em 0;
+  box-shadow: #17a2b8 0 0 0.5em 0;
 }
 .navbar-expand{
   padding: 1em;

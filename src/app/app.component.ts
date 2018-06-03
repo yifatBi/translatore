@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import { HttpHeaders } from '@angular/common/http';
+import {HttpHeaders} from '@angular/common/http';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -20,7 +20,7 @@ export class AppComponent {
   text = '';
   codeFutureList = ['Python', 'Go', 'C#'];
   speakFutureList = ['Hebrew', 'Spanish', 'French'];
-  tooltipMsg = 'Those languages don\'t supported yet';
+  tooltipMsg = 'Those languages are not supported yet';
   loader = false;
   copyInputMessage(inputElement) {
     inputElement.disabled = false;
@@ -30,14 +30,14 @@ export class AppComponent {
   }
   submitFunction(text) {
     this.loader = true;
-    console.log(text);
     this.http.post('/v1/generate', text, httpOptions).subscribe( data => {
       this.loader = false;
-      this.translateResult = 'function(int Var1,int Var2){return Var1+Var2}';
+      this.translateResult = JSON.stringify(data);
       // scrolling to the result if small device
       document.getElementById('translation').scrollIntoView({ behavior: 'smooth' });
     }, error1 => {
       alert('Sorry something went wrong :(');
+      // this.translateResult = 'function(int Var1,int Var2){return Var1+Var2;}';
       this.loader = false; });
 
 

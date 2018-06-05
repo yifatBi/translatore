@@ -18,8 +18,9 @@ export class AppComponent {
     private http: HttpClient) {}
   translateResult;
   text = '';
+  langCode='en';
   codeFutureList = ['Python', 'Go', 'C#'];
-  speakFutureList = ['Hebrew', 'Spanish', 'French'];
+  speakFutureList = [{label:'Hebrew',val:'iw'}, {label:'Spanish',val:'es'}, {label:'French',val:'fr'}];
   tooltipMsg = 'Those languages are not supported yet';
   loader = false;
   copyInputMessage(inputElement) {
@@ -27,6 +28,13 @@ export class AppComponent {
     inputElement.select();
     document.execCommand('copy');
     inputElement.disabled = true;
+  }
+  translateText(){
+      this.http.get('https://translation.googleapis.com/language/translate/v2/?q=`${this.text}`&source=`${this.langCode}`&target=en&key=YOUR_API_KEY_HERE').subscribe( ({data}) => {
+      this.englishText = data.translations.translatedText;
+    }, error1 => {
+      alert('Sorry something went wrong with translation:(');
+    });
   }
   submitFunction(text) {
     this.loader = true;

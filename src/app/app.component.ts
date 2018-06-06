@@ -18,23 +18,27 @@ export class AppComponent {
     private http: HttpClient) {}
   translateResult;
   text = '';
-  langCode='en';
+  langCode = 'en';
   codeFutureList = ['Python', 'Go', 'C#'];
-  speakFutureList = [{label:'Hebrew',val:'iw'}, {label:'Spanish',val:'es'}, {label:'French',val:'fr'}];
-  tooltipMsg = 'Those languages are not supported yet';
+  speakList = [{label: 'English', val: 'en'}, {label: 'Hebrew', val: 'he'}, {label: 'Spanish', val: 'es'}, {label: 'French', val: 'fr'}];
+  tooltipMsg = 'The language is not supported yet';
   loader = false;
+
   copyInputMessage(inputElement) {
     inputElement.disabled = false;
     inputElement.select();
     document.execCommand('copy');
     inputElement.disabled = true;
   }
-  translateText(){
-      this.http.get('https://translation.googleapis.com/language/translate/v2/?q=`${this.text}`&source=`${this.langCode}`&target=en&key=YOUR_API_KEY_HERE').subscribe( ({data}) => {
-      this.englishText = data.translations.translatedText;
-    }, error1 => {
-      alert('Sorry something went wrong with translation:(');
-    });
+  translateText() {
+    if (this.langCode !== 'en') {
+    const apiKey = 'trnsl.1.1.20180606T095504Z.451741178e5d8353.0c53ca849af9576d664c91a53a37f7b3cb871f6c';
+    this.http.get(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=${apiKey}&text=${this.text}&lang=${this.langCode}-en`).
+    subscribe(value => {
+      const transText = value;
+      console.log(transText);
+    this.submitFunction(transText); });
+    } else {this.submitFunction(this.text);}
   }
   submitFunction(text) {
     this.loader = true;

@@ -15,14 +15,14 @@
     <textarea autofocus [(ngModel)]="text" id="textbox" class="translate-boxes" rows="7" [disabled]="loader" #textbox
               placeholder="Please enter description for program you want."></textarea>
     <br/>
-    <button class="btn btn-primary" type="submit" (click)="translateText(text)" style="float:right; width: 30%"
+    <button class="btn btn-primary" type="submit" (click)="translateText()" style="float:right; width: 30%"
             [disabled]="!text||loader">Convert
     </button>
   </div>
     <div class="col-md-6 col-lg-6 col-centered">
     <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic">
       <label ngbButtonLabel class="btn-primary" >
-        <input ngbButton type="radio" [value]="Java"/> Java</label>
+        <input ngbButton type="radio" value="Java"/> Java</label>
       <label ngbButtonLabel class="btn-primary" *ngFor="let lang of codeFutureList" placement="bottom" [ngbTooltip]="tooltipMsg">
         <input ngbButton type="radio" disabled [value]="lang" /> {{lang}}</label>
     </div>

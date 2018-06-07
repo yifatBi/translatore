@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -35,7 +34,7 @@ export class AppComponent {
     const apiKey = 'trnsl.1.1.20180606T095504Z.451741178e5d8353.0c53ca849af9576d664c91a53a37f7b3cb871f6c';
     this.http.get(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=${apiKey}&text=${this.text}&lang=${this.langCode}-en`).
     subscribe(value => {
-      let transText =  value['text'][0];
+      const transText =  value['text'][0];
       console.log(transText);
     this.submitFunction(transText); });
     } else {this.submitFunction(this.text); }
